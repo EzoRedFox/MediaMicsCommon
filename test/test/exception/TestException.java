@@ -1,4 +1,4 @@
-package com.mediamics.common.test.exception;
+package test.exception;
 
 import com.mediamics.common.exception.ServiceRuntimeException;
 import com.mediamics.common.logger.Log;
