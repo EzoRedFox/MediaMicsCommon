@@ -11,9 +11,13 @@ import java.util.stream.Stream;
  */
 public class ServiceRuntimeException extends RuntimeException{
     
-    public Exception exception;
+    public Throwable exception;
     
-    public ServiceRuntimeException(String message, Exception exception){
+    public ServiceRuntimeException(Throwable exception){
+        this.exception = exception;
+    }
+    
+    public ServiceRuntimeException(String message, Throwable exception){
         super(message);
         this.exception = exception;
     }
@@ -22,7 +26,7 @@ public class ServiceRuntimeException extends RuntimeException{
         List<String> list = new ArrayList<>();
         list.add("エラーが発生しました。 : " + getMessage());
         list.add(exception.getClass().getName() + " : " + exception.getMessage());
-        list.addAll(Stream.of(exception.getStackTrace()).map( e -> "  at " + e.toString() ).collect( Collectors.toList() ));
+        list.addAll(Stream.of(exception.getStackTrace()).map( e -> "    at " + e.toString() ).collect( Collectors.toList() ));
         return list;
     }
     

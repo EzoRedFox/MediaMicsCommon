@@ -1,19 +1,19 @@
 package com.mediamics.common.test.exception;
 
 import com.mediamics.common.exception.ServiceRuntimeException;
+import com.mediamics.common.logger.Log;
 
 /**
  *
  * @author Matsu
  */
 public class TestException {
-
+    
     public static void main(String[] args) {
         try {
             new TestException().test();
         } catch (ServiceRuntimeException ex) {
-            ex.getMessages().forEach(System.out::println);
-            throw ex;
+            new Log().error(ex);
         }
     }
 
