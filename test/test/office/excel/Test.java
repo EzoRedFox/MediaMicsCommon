@@ -24,7 +24,7 @@ public class Test {
             temp.setTest2("テスト２変換後");
             temp.setTest3("テスト３変換後");
             excel.replaceTemplate(temp);
-            excel.saveTo("D:\\dev\\tmplate", "出力先.xlsx");
+            excel.saveTo("D:\\dev\\tmplate", "出力先1.xlsx");
         }
 
     }

@@ -5,6 +5,7 @@ import com.mediamics.common.util.date.DateUtil;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
@@ -21,6 +22,10 @@ public class ExtensionFile {
 
     public ExtensionFile(File file) {
         this.file = file;
+    }
+    
+    public ExtensionFile(Path path){
+        this.file = path.toFile();
     }
 
     public ExtensionFile getTempFile() throws IOException {

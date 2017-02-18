@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
@@ -57,6 +58,7 @@ public class Excel implements AutoCloseable {
      *
      * @param parentPath
      * @param fileNm
+     * @throws java.io.IOException
      */
     public void saveTo(String parentPath, String fileNm) throws IOException {
         try (FileOutputStream out = new FileOutputStream(new File(parentPath, fileNm))) {
